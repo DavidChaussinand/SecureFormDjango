@@ -55,9 +55,15 @@
                 {{ form.contenu }}
                 <div class="text-danger">{{ form.contenu.errors }}</div>
             </div>
+            <div class="mb-3">
+                {{ form.captcha.label_tag }}
+                {{ form.captcha }}
+                <div class="text-danger">{{ form.captcha.errors }}</div>
+            </div>
         
             <button type="submit" class="btn btn-primary mt-3">Envoyer</button>
         </form>
+        
         
         
     </div>

@@ -1,5 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Checkbox
 import re
 
 class ContactForm(forms.Form):
@@ -72,4 +74,9 @@ class ContactForm(forms.Form):
         label="Contenu :",  # Label personnalisé
         widget=forms.Textarea(attrs={'class': 'form-control'}),
         validators=[validate_alphanumeric],
+    )
+    captcha = ReCaptchaField(
+        widget=ReCaptchaV2Checkbox(
+            attrs={'class': 'mt-3'}
+        )
     )

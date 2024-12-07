@@ -1,8 +1,8 @@
 # Contact Form Application
 
 ## Description
-Cette application Django fournit un formulaire de contact sécurisé , construit avec Bootstrap. 
-Elle inclut des fonctionnalités de validation des données et des règles de sécurité pour garantir une expérience utilisateur fiable et sans faille. 
+Cette application Django fournit un formulaire de contact sécurisé, construit avec Bootstrap. 
+Elle inclut des fonctionnalités de validation des données, un système de CAPTCHA et des règles de sécurité pour garantir une expérience utilisateur fiable et sans faille. 
 Ce projet peut être utilisé comme base pour toute application nécessitant un formulaire de contact.
 
 ---
@@ -10,18 +10,21 @@ Ce projet peut être utilisé comme base pour toute application nécessitant un 
 ## Fonctionnalités
 - **Formulaire de contact** :
   - Champs disponibles :
-    - Nom : lettres, espaces et tirets uniquement.
-    - Prénom : lettres, espaces et tirets uniquement.
-    - Téléphone : chiffres uniquement.
-    - Email : format email valide requis.
-    - Motif de la demande : choix multiple (Devis Tattoo, Réclamation, Autres).
-    - Contenu : texte alphanumérique uniquement (lettres, chiffres, espaces).
-  - Validation stricte des champs pour éviter les entrées malveillantes.
-  - Affichage des erreurs en rouge directement sous chaque champ concerné.
-  - Validation manuelle personnalisée pour l'email, garantissant la présence du symbole @ et excluant certains domaines non autorisés.
-  - Protection contre les envois multiples :
-      Désactivation du bouton "Envoyer" après un clic.
-      Limitation côté serveur avec une gestion des soumissions par IP (1 soumission toutes les 60 secondes).
+    - **Nom** : lettres, espaces et tirets uniquement.
+    - **Prénom** : lettres, espaces et tirets uniquement.
+    - **Téléphone** : chiffres uniquement.
+    - **Email** : format email valide requis.
+    - **Motif de la demande** : choix multiple (Devis Tattoo, Réclamation, Autres).
+    - **Contenu** : texte alphanumérique uniquement (lettres, chiffres, espaces).
+  - **Validation stricte** des champs pour éviter les entrées malveillantes.
+  - **Affichage des erreurs** en rouge directement sous chaque champ concerné.
+  - **Validation manuelle personnalisée** pour l'email, garantissant la présence du symbole `@` et excluant certains domaines non autorisés.
+  - **Protection contre les envois multiples** :
+    - Désactivation du bouton "Envoyer" après un clic.
+    - Limitation côté serveur avec une gestion des soumissions par IP (1 soumission toutes les 60 secondes).
+  - **CAPTCHA Google reCAPTCHA** :
+    - Intégré pour empêcher les soumissions automatisées et renforcer la sécurité du formulaire.
+
 - **Design moderne** : Intégré avec Bootstrap 5 pour un rendu visuel attrayant.
 
 ---
@@ -32,7 +35,4 @@ Ce projet peut être utilisé comme base pour toute application nécessitant un 
 - Python 3.9 ou supérieur
 - Pip (gestionnaire de paquets Python)
 - Virtualenv (optionnel mais recommandé)
-
-
-
-
+- Clés Google reCAPTCHA (obtenues via la [Google reCAPTCHA Admin Console](https://www.google.com/recaptcha/admin/create))
