@@ -30,9 +30,14 @@ Ce projet peut être utilisé comme base pour toute application nécessitant un 
 ---
 
 ## Installation
+dans setting : rajouter  
+    env = environ.Env()
+    environ.Env.read_env(os.path.join(BASE_DIR, '.env')) 
 
 ### Prérequis
 - Python 3.9 ou supérieur
 - Pip (gestionnaire de paquets Python)
+- pip install python-decouple
+- pip install django-environ 
 - Virtualenv (optionnel mais recommandé)
 - Clés Google reCAPTCHA (obtenues via la [Google reCAPTCHA Admin Console](https://www.google.com/recaptcha/admin/create))
